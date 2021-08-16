@@ -42,6 +42,17 @@ void SendNoteOff(MIDIEndpointRef source, Byte note) {
   SendNoteOnOff(source, note, false);
 }
 
+void ReleaseResources(MIDIEndpointRef source,
+                      MIDIPortRef outPort,
+                      MIDIClientRef client) {
+  CheckError(MIDIEndpointDispose(source),
+             "Disposing the MIDI source");
+  CheckError(MIDIPortDispose(outPort),
+             "Disposing the MIDI out port");
+  CheckError(MIDIClientDispose(client),
+             "Disposing the MIDI client");
+}
+
 int main(int argc, const char * argv[]) {
   @autoreleasepool {
     NSPrint(@"Starting...\n");
@@ -54,7 +65,6 @@ int main(int argc, const char * argv[]) {
                "Starting MIDI Client");
    
     MIDIPortRef outPort;
-    
     CheckError(MIDIOutputPortCreate(client, CFSTR("outPort"), &outPort),
                "creating output port");
 
@@ -78,6 +88,8 @@ int main(int argc, const char * argv[]) {
       
       SendNoteOff(source, note);
     }
+    
+    ReleaseResources(source, outPort, client);
   }
   return 0;
 }
