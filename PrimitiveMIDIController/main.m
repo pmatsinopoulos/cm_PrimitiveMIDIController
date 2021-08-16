@@ -26,9 +26,9 @@ void SendNoteOnOff(MIDIEndpointRef source, Byte note, bool on) {
   evtList.packet[0].timeStamp = 0;
   evtList.packet[0].wordCount = 1;
   memset(evtList.packet[0].words, 0 , sizeof(evtList.packet[0].words));
-  evtList.packet[0].words[0] = on ? 0x20900000 : 0x20800000;
-  evtList.packet[0].words[0] = evtList.packet[0].words[0] | ((note & 0x7F) << 8);
-  evtList.packet[0].words[0] = evtList.packet[0].words[0] | 127;
+  evtList.packet[0].words[0] = on ? 0x20900000 : 0x20800000; // note on or off
+  evtList.packet[0].words[0] = evtList.packet[0].words[0] | ((note & 0x7F) << 8); // note
+  evtList.packet[0].words[0] = evtList.packet[0].words[0] | 127; // velocity
   
   CheckError(MIDIReceivedEventList(source, &evtList),
              "MIDI Received Event List");
