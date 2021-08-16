@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E560D42D26CA39EA00A93DD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E560D42C26CA39EA00A93DD0 /* main.m */; };
+		E560D43526CA3A4400A93DD0 /* CheckError.m in Sources */ = {isa = PBXBuildFile; fileRef = E560D43426CA3A4400A93DD0 /* CheckError.m */; };
+		E560D43826CA3B0300A93DD0 /* NSPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = E560D43726CA3B0300A93DD0 /* NSPrint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		E560D42926CA39EA00A93DD0 /* PrimitiveMIDIController */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PrimitiveMIDIController; sourceTree = BUILT_PRODUCTS_DIR; };
 		E560D42C26CA39EA00A93DD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E560D43426CA3A4400A93DD0 /* CheckError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckError.m; sourceTree = "<group>"; };
+		E560D43626CA3A4A00A93DD0 /* CheckError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckError.h; sourceTree = "<group>"; };
+		E560D43726CA3B0300A93DD0 /* NSPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPrint.m; sourceTree = "<group>"; };
+		E560D43926CA3B0B00A93DD0 /* NSPrint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSPrint.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +63,21 @@
 		E560D42B26CA39EA00A93DD0 /* PrimitiveMIDIController */ = {
 			isa = PBXGroup;
 			children = (
+				E560D43326CA3A2800A93DD0 /* Utils */,
 				E560D42C26CA39EA00A93DD0 /* main.m */,
 			);
 			path = PrimitiveMIDIController;
+			sourceTree = "<group>";
+		};
+		E560D43326CA3A2800A93DD0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E560D43926CA3B0B00A93DD0 /* NSPrint.h */,
+				E560D43726CA3B0300A93DD0 /* NSPrint.m */,
+				E560D43626CA3A4A00A93DD0 /* CheckError.h */,
+				E560D43426CA3A4400A93DD0 /* CheckError.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +137,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E560D42D26CA39EA00A93DD0 /* main.m in Sources */,
+				E560D43526CA3A4400A93DD0 /* CheckError.m in Sources */,
+				E560D43826CA3B0300A93DD0 /* NSPrint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
